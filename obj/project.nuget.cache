@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TPxxWSyIS5wKgqFhCDAeuT5D7cG4scN/Pmm6r0Y8n7WdqFQ149l2wqNkOZhoCsJdgTiUwErp1MMtavHypwt7kg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\matta\\source\\repos\\bruteforce\\bruteforce\\bruteforce.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\matta\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512"
+  ],
+  "logs": []
+}

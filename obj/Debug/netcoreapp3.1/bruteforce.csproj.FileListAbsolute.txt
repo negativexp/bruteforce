@@ -1,0 +1,14 @@
+C:\Users\matta\source\repos\bruteforce\bruteforce\bin\Debug\netcoreapp3.1\bruteforce.exe
+C:\Users\matta\source\repos\bruteforce\bruteforce\bin\Debug\netcoreapp3.1\bruteforce.deps.json
+C:\Users\matta\source\repos\bruteforce\bruteforce\bin\Debug\netcoreapp3.1\bruteforce.runtimeconfig.json
+C:\Users\matta\source\repos\bruteforce\bruteforce\bin\Debug\netcoreapp3.1\bruteforce.runtimeconfig.dev.json
+C:\Users\matta\source\repos\bruteforce\bruteforce\bin\Debug\netcoreapp3.1\bruteforce.dll
+C:\Users\matta\source\repos\bruteforce\bruteforce\bin\Debug\netcoreapp3.1\bruteforce.pdb
+C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.csproj.AssemblyReference.cache
+C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.AssemblyInfoInputs.cache
+C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.AssemblyInfo.cs
+C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.csproj.CoreCompileInputs.cache
+C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.dll
+C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.pdb
+C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.genruntimeconfig.cache
