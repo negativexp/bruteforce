@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace bruteforce
@@ -25,16 +27,16 @@ namespace bruteforce
         private static void DisplayMainMenu()
         {
             Console.Clear();
-            Console.WriteLine("");
-            CenterText("[ BrutelyOPENED - negativexp] ");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            CenterTextLine(" - READ - ");
-            Console.WriteLine("");
-            CenterText("I'm simply not responsible for anything :)");
-            CenterText("Use at your own risk, thanks");
-            Console.WriteLine("");
-            CenterText("You move by using arrows and enter to change");
+            NewLine();
+            TextCenter("[ BrutelyOPENED - negativexp] ");
+            NewLine();
+            NewLine();
+            TextCenterLine(" - READ - ");
+            NewLine();
+            TextCenterLine("I'm simply not responsible for anything :)");
+            TextCenter("Use at your own risk, thanks");
+            NewLine();
+            TextCenter("You move by using arrows and enter to change");
         }
 
         private static void DisplaySettingsMenu()
@@ -45,8 +47,8 @@ namespace bruteforce
                 int x = Console.CursorLeft;
                 int y = Console.CursorTop;
 
-                CenterTextLine(" - Settings - ");
-                Console.WriteLine("");
+                TextCenterLine(" - Settings - ");
+                NewLine();
 
                 for (int i = 0; i < settings.Length; i++)
                 {
@@ -90,7 +92,7 @@ namespace bruteforce
                         Console.SetCursorPosition(x, y+settings.Length+2);
                         for(int i = 0; i < allCharNumbers.Length; i++)
                         {
-                            Console.WriteLine(new String(' ', Console.WindowWidth));
+                            TextBlankEnd("");
                         }
 
                     }
@@ -104,6 +106,7 @@ namespace bruteforce
                 {
                     position--;
                 }
+                
                 Console.SetCursorPosition(0, 0);
                 Console.SetCursorPosition(x, y);
             }
@@ -113,7 +116,7 @@ namespace bruteforce
         {
 
             Console.SetCursorPosition(x, y);
-            CenterTextLine(" - STARTING - ");
+            TextCenterLine(" - STARTING - ");
             int x2 = Console.CursorLeft;
             int y2 = Console.CursorTop;
             for(int i = 0; i < settings.Length + 1; i++)
@@ -121,9 +124,74 @@ namespace bruteforce
                 TextBlankEnd("");
             }
             Console.SetCursorPosition(x2, y2);
-            Console.WriteLine("");    
+            NewLine();
+            TextWithTime("Setting up charset...");
+
+            StringBuilder sb = new StringBuilder();
+            foreach(int c in allCharNumbers)
+            {
+                if(c != 0)
+                {
+                    sb.Append((char)c);
+                }
+            }
+
+            string test = "abc";
+
+            allLexicographic(test);
+
+
+
+
+            
             
             Console.ReadKey();
+        }
+
+        static void allLexicographicRecur(String str, char[] data,
+                                  int last, int index)
+        {
+            int length = str.Length;
+
+            // One by one fix all characters at the given index
+            // and recur for the subsequent indexes
+            for (int i = 0; i < length; i++)
+            {
+
+                // Fix the ith character at index and if
+                // this is not the last index then
+                // recursively call for higher indexes
+                data[index] = str[i];
+
+                // If this is the last index then print
+                // the string stored in data[]
+                if (index == last)
+                    Console.WriteLine(new String(data));
+                else
+                    allLexicographicRecur(str, data, last,
+                                               index + 1);
+            }
+        }
+
+        // This function sorts input string, allocate memory
+        // for data(needed for allLexicographicRecur()) and calls
+        // allLexicographicRecur() for printing all permutations
+        static void allLexicographic(String str)
+        {
+            int length = str.Length;
+
+            // Create a temp array that will be used by
+            // allLexicographicRecur()
+            char[] data = new char[length + 1];
+            char[] temp = str.ToCharArray();
+
+            // Sort the input string so that we get all
+            // output strings in lexicographically sorted order
+            Array.Sort(temp);
+            str = new String(temp);
+
+            // Now print all permutations
+            allLexicographicRecur(str, data, length - 1, );
         }
 
         private static void ChangeCharacters(int x, int y)
@@ -134,7 +202,7 @@ namespace bruteforce
                 int amountOfBlanks = 0;
 
                 Console.SetCursorPosition(x, y);
-                CenterTextLine(" - Characters - ");
+                TextCenterLine(" - Characters - ");
                 Console.WriteLine("");
 
                 foreach (int i in allCharNumbers)
@@ -160,15 +228,15 @@ namespace bruteforce
 
                 Console.WriteLine("");
 
-                CenterTextLine(" - info - ");
+                TextCenterLine(" - info - ");
                 Console.WriteLine("");
-                CenterText("To add type 'add (number of character)'");
-                CenterText("To remove a character type 'remove (number of character)'");
-                CenterText("To reset the character set type 'reset'");
+                TextCenter("To add type 'add (number of character)'");
+                TextCenter("To remove a character type 'remove (number of character)'");
+                TextCenter("To reset the character set type 'reset'");
                 Console.WriteLine("");
-                CenterText("Press enter to go back");
+                TextCenter("Press enter to go back");
                 Console.WriteLine("");
-                CenterTextLine("");
+                TextCenterLine("");
                 Console.WriteLine("");
                 Console.Write("input: ");
                 string commandInput = Console.ReadLine();
@@ -184,8 +252,12 @@ namespace bruteforce
                 }
                 if(commandInput.Contains("remove"))
                 {
-                    int charNumber = int.Parse(Regex.Match(commandInput, @"\d+").Value);
-                    allCharNumbers = allCharNumbers.Where(e => e != charNumber).ToArray();
+                    if(!commandInput.Contains("-f"))
+                    {
+                        int charNumber = int.Parse(Regex.Match(commandInput, @"\d+").Value);
+                        allCharNumbers = allCharNumbers.Where(e => e != charNumber).ToArray();
+                    }
+                    
                 }
                 if(commandInput == "reset")
                 {
@@ -195,6 +267,11 @@ namespace bruteforce
             }
 
         }
+
+        private static void NewLine()
+        {
+            Console.WriteLine("");
+        } 
 
         private static void TextWithTime(string s)
         {
@@ -206,7 +283,7 @@ namespace bruteforce
             Console.WriteLine(s + new string(' ', Console.WindowWidth - s.Length));
         }
 
-        private static void CenterText(string s)
+        private static void TextCenter(string s)
         {
             int number2;
             int number = Console.WindowWidth - s.Length;
@@ -221,7 +298,7 @@ namespace bruteforce
             Console.WriteLine(new String(' ', number) + s + new String(' ', number2));
         }
 
-        private static void CenterTextLine(string s)
+        private static void TextCenterLine(string s)
         {
             int number2;
             int number = Console.WindowWidth - s.Length;
