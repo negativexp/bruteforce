@@ -12,3 +12,5 @@ C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\brutef
 C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.dll
 C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.pdb
 C:\Users\matta\source\repos\bruteforce\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.genruntimeconfig.cache
+C:\Users\matyas.schuller\Documents\GitHub\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.dll
+C:\Users\matyas.schuller\Documents\GitHub\bruteforce\obj\Debug\netcoreapp3.1\bruteforce.pdb
